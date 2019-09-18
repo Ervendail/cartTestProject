@@ -1,0 +1,11 @@
+body {
+    font: 14px "Lato", Helvetica, Arial, sans-serif;
+}
+
+iframe {
+    /* TODO: reset iframe border */
+}
+
+a {
+    color: #00B7FF;
+}
