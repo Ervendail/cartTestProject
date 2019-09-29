@@ -3,7 +3,7 @@ body {
 }
 
 iframe {
-    /* TODO: reset iframe border */
+    border: none;
 }
 
 a {
