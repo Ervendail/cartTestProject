@@ -7,10 +7,20 @@
 
 <body>
 <header>
-    <a href="javascript:void(0)" onclick="navigateToHomepage()">LOGO</a>
-    <p>Hi test task</p>
-    <button onclick="navigateToCart()">Cart</button>
+    <a href="javascript:void(0)" onclick="navigateToHomepage()" class="logo"> 
+        <img src="images/intro.png" alt="logo">
+    </a>
+    <div class="whole-cart">
+        <button onclick="navigateToCart()" class="cart">
+            <span class="cart-name">cart</span>
+            <div class="cart-image">
+                <img src="icons/shopping_cart-24px.svg" alt="cart" class="cart-icon">
+            <div class="round-counter">3</div>
+        </button>
+        </div>
+    </div>
 </header>
+
 <p>Welcome to your task</p>
 <iframe id="mainContent" width="100%"></iframe>
 <script src="javascripts/main.js"></script>

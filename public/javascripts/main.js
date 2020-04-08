@@ -23,3 +23,4 @@ function navigateToHomepage () {
 		iframe.setAttribute('src', cartUrl);
 	}
 }
+

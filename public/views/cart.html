@@ -1,0 +1,584 @@
+<html>
+
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="../../stylesheets/style.css">
+    <link rel="stylesheet" href="../../stylesheets/views/cart.css">
+    <link rel="stylesheet" href="../../stylesheets/views/tooltips.css">
+    <link rel="stylesheet" href="../../stylesheets/views/commonStyle.css">
+</head>
+
+<body>
+    <div class="background-field  shipping-page" id="shipping-page">
+        <section class="main-block">
+
+            <section class="left-block">
+
+                <ul class="breadcrumbs">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link breadcrumb-link-active">Shipping</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link disabled">Billing</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link disabled">Payment</a>
+                    </li>
+                </ul>
+
+                <h1>Shipping Info</h1>
+                <form id="shipping-submit-form">
+
+                    <div class="form-recipient">
+                        <h3 class="form-title">Recipient</h3>
+
+                        <div class="tooltip" id="name-tooltip">Please enter recipient full name</div>
+                        <input type="text" name="name" id="name" placeholder="Full Name" required>
+
+                        <div class="tooltip phone-tooltip" id="phone-tooltip">Please enter phone number</div>
+                        <input type="tel" name="phone number" id="phoneNumber" placeholder="Daytime Phone" required
+                            class="little-size-input">
+
+                        <span class="phone-note">For delivery questions only</span>
+                    </div>
+
+                    <div class="form-address">
+                        <h3 class="form-title">Address</h3>
+
+                        <div class="tooltip street-tooltip" id="address-tooltip">Please enter street address</div>
+                        <input type="text" name="address" id="address" placeholder="Street Address" required>
+
+                        <input type="text" name="building" id="building"
+                            placeholder="Apt, Suite, Bldg, Gate code, (Optional)">
+
+                        <div class="tooltip city-tooltip" id="city-tooltip">Please enter your city</div>
+                        <input type="text" name="city" id="city" placeholder="City" required>
+
+                        <div class="tooltip country-tooltip" id="country-tooltip">Please choose your country</div>
+                        <input type="text" name="country" id="country" list="countries" placeholder="Country" required
+                            class="little-size-input">
+                        <datalist id="countries">
+                            <option value="Romania">Romania</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Vincent & Grenadines">Saint Vincent & Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                        </datalist>
+
+                        <div class="tooltip zip-tooltip" id="zip-tooltip">Please enter zip code</div>
+                        <input type="text" name="zipCode" id="zipCode" placeholder="ZIP" required maxlength="7"
+                            minlength="4" class="zip">
+
+                        <button type="submit" class="submit-button" id="submit-shipping-button">Continue</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="right-block">
+
+                <section class=summary-titles>
+                    <h3 class="summary-title">Order Summary</h3>
+                    <a href="#" class="edit-order">edit order</a>
+                </section>
+
+                <section class="purchases-in-cart">
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-boots.png" alt="The chelsea boots" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Chelsea Boot</span>
+                            <span class="purchase-description">Black</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$235</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-backpack.png" alt="The backpack" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description-title">The Twill Snap Backpack</span>
+                            <span class="purchase-description">Reverse Denim + Brown Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$65</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Twill Zip Tote</span>
+                            <span class="purchase-description">Reverse Denim + Black Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$48</section>
+                    </div>
+
+                </section>
+
+                <section class="summary-block">
+
+                    <table class="payment-items">
+                        <tr>
+                            <th class="payment-column-1">Subtotal</th>
+                            <th class="payment-column-2">$398</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Shipping</th>
+                            <th class="payment-column-2">Free</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Taxes</th>
+                            <th class="payment-column-2">$12.12</th>
+                        </tr>
+                    </table>
+
+                    <div class="total-summary-container">
+                        <span class="total-summary-title">Total</span>
+                        <span class="total-summary">$410.12</span>
+                    </div>
+
+                </section>
+
+                <span class="terms">All purchases are subject to our
+                    <a href="#" class="terms-link">Terms and Conditions</a>
+                </span>
+
+            </section>
+        </section>
+    </div>
+
+    <div class="background-field billing-page" id="billing-page">
+        <section class="main-block" id="billing-page">
+
+
+            <section class="left-block">
+
+                <ul class="breadcrumbs">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link breadcrumb-link-visisted"
+                            onclick="switchPages (0)">Shipping</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link breadcrumb-link-active">Billing</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link disabled">Payment</a>
+                    </li>
+                </ul>
+
+                <h1>Billing Information</h1>
+                <form>
+
+                    <div class="form-recipient">
+                        <h3 class="form-title">Billing contact</h3>
+
+                        <input type="text" name="fullNname" id="full-name" class="full-namer" placeholder="Full Name"
+                            data-tooltip="please enter your full name" required>
+
+                        <input type="text" name="email" id="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="form-address">
+                        <h3 class="form-title">Billing Address</h3>
+
+                        <input type="text" name="address" id="address" placeholder="Street Address" required>
+
+                        <input type="text" name="building" id="building"
+                            placeholder="Apt, Suite, Bldg, Gate code, (Optional)">
+
+                        <input type="text" name="city" id="city" placeholder="City" required>
+
+                        <input type="text" name="country" id="country" list="countries" placeholder="Country" required
+                            class="little-size-input">
+                        <datalist id="countries">
+                            <option value="Romania">Romania</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Rwanda">Rwanda</option>
+                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                            <option value="Saint Lucia">Saint Lucia</option>
+                            <option value="Saint Vincent & Grenadines">Saint Vincent & Grenadines</option>
+                            <option value="Samoa">Samoa</option>
+                            <option value="San Marino">San Marino</option>
+                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Senegal">Senegal</option>
+                        </datalist>
+
+                        <input type="text" name="zipCode" id="zipCode" placeholder="ZIP" required maxlength="7"
+                            minlength="4" class="zip">
+
+                        <button type='submit' class="submit-button" id="submit-billing-button">Continue</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="right-block">
+
+                <section class=summary-titles>
+                    <h3 class="summary-title">Order Summary</h3>
+                    <a href="#" class="edit-order">edit order</a>
+                </section>
+
+                <section class="purchases-in-cart">
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-boots.png" alt="The chelsea boots" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Chelsea Boot</span>
+                            <span class="purchase-description">Black</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$235</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-backpack.png" alt="The backpack" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description-title">The Twill Snap Backpack</span>
+                            <span class="purchase-description">Reverse Denim + Brown Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$65</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Twill Zip Tote</span>
+                            <span class="purchase-description">Reverse Denim + Black Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$48</section>
+                    </div>
+
+                </section>
+
+                <section class="summary-block">
+
+                    <table class="payment-items">
+                        <tr>
+                            <th class="payment-column-1">Subtotal</th>
+                            <th class="payment-column-2">$398</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Shipping</th>
+                            <th class="payment-column-2">Free</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Taxes</th>
+                            <th class="payment-column-2">$12.12</th>
+                        </tr>
+                    </table>
+
+                    <div class="total-summary-container">
+                        <span class="total-summary-title">Total</span>
+                        <span class="total-summary">$410.12</span>
+                    </div>
+
+                </section>
+
+                <span class="terms">All purchases are subject to our
+                    <a href="#" class="terms-link">Terms and Conditions</a>
+                </span>
+
+            </section>
+        </section>
+    </div>
+
+    <div class="background-field payment-page" id="payment-page">
+        <section class="main-block">
+
+            <section class="left-block">
+
+                <ul class="breadcrumbs">
+                    <li class="breadcrumb-item">
+                        <a href="#" onclick="switchPages (0)"
+                            class="breadcrumb-link breadcrumb-link-visisted">Shipping</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" onclick="switchPages (1)"
+                            class="breadcrumb-link breadcrumb-link-visisted">Billing</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#" class="breadcrumb-link breadcrumb-link-active">Payment</a>
+                    </li>
+                </ul>
+
+                <h1>Payment</h1>
+
+                <div class="encrypted-payment">
+                    <div class="encrypted-payment-img"><img src="../images/payLock.png" alt="lock"></div>
+                    <span class="encrypted-payment-title">This is a secure 128-bit SSL encrypted payment</span>
+                </div>
+
+                <form>
+
+                    <div class="cardholder-info">
+                        <h3 class="payment-form-title">Cardholder name</h3>
+
+                        <input type="text" name="cardholderName" id="cardholderName"
+                            placeholder="Name as it appears on your card" required>
+
+                        <h3 class="payment-form-title">Card number</h3>
+
+                        <input type="text" name="cardNumber" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+
+                    </div>
+
+                    <div class="date-and-code">
+
+                        <div class="expire-date-container">
+                            <h3 class="payment-form-title">Expire Date</h3>
+                            <input type="text" name="expireDate" id="expireDate" placeholder="MM/YY" required>
+                        </div>
+
+                        <div class="security-code-container">
+                            <h3 class="payment-form-title">Security Code</h3>
+                            <input type="text" name="securityCode" id="securityCode" required>
+                        </div>
+
+                    </div>
+
+                    <div class="pay-button">
+
+                        <button type="submit" class="submit-button" id="pay-button">Pay Securely</button>
+
+                    </div>
+                </form>
+            </section>
+
+            <section class="right-block">
+
+                <section class=summary-titles>
+                    <h3 class="summary-title">Order Summary</h3>
+                    <a href="#" class="edit-order">edit order</a>
+                </section>
+
+                <section class="purchases-in-cart">
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-boots.png" alt="The chelsea boots" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Chelsea Boot</span>
+                            <span class="purchase-description">Black</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$235</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-backpack.png" alt="The backpack" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description-title">The Twill Snap Backpack</span>
+                            <span class="purchase-description">Reverse Denim + Brown Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$65</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Twill Zip Tote</span>
+                            <span class="purchase-description">Reverse Denim + Black Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$48</section>
+                    </div>
+
+                </section>
+
+                <section class="summary-block">
+
+                    <table class="payment-items">
+                        <tr>
+                            <th class="payment-column-1">Subtotal</th>
+                            <th class="payment-column-2">$398</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Shipping</th>
+                            <th class="payment-column-2">Free</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Taxes</th>
+                            <th class="payment-column-2">$12.12</th>
+                        </tr>
+                    </table>
+
+                    <div class="total-summary-container">
+                        <span class="total-summary-title">Total</span>
+                        <span class="total-summary">$410.12</span>
+                    </div>
+
+                </section>
+
+                <span class="terms">All purchases are subject to our
+                    <a href="#" class="terms-link">Terms and Conditions</a>
+                </span>
+
+            </section>
+        </section>
+    </div>
+
+    <div class="background-field success-page" id="success-page">
+        <section class="main-block">
+
+            <section class="left-block">
+
+                <h1 class="success-title">Thank you for your order!</h1>
+
+                <section class="success-list">
+                    <p class="success-information order-number">Order number is: 188787788</p>
+                    <p class="success-information email-confirmation">You will receive an email confirmation shortly to
+                        <a class="contact-email" id="contact-email"></a></p>
+                    <p class="success-information delivery-date">Estimated delivery Day is <strong>Friday 1st April
+                            2016</strong></p>
+                </section>
+
+                <button class="print-recipe">Print Recipe</button>
+
+            </section>
+
+            <section class="right-block right-block-success">
+
+                <section class=summary-titles>
+                    <h3 class="summary-title">Order Summary</h3>
+                    <a href="#" class="edit-order disabled">edit order</a>
+                </section>
+
+                <section class="purchases-in-cart">
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-boots.png" alt="The chelsea boots" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Chelsea Boot</span>
+                            <span class="purchase-description">Black</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$235</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/Bitmap-backpack.png" alt="The backpack" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description-title">The Twill Snap Backpack</span>
+                            <span class="purchase-description">Reverse Denim + Brown Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$65</section>
+                    </div>
+
+                    <div class="ordered-item">
+
+                        <div class="image-container">
+                            <img src="../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
+                        </div>
+
+                        <section class="about-purchase">
+                            <span class="purchase-description purchase-description-title">The Twill Zip Tote</span>
+                            <span class="purchase-description">Reverse Denim + Black Leather</span>
+                            <span class="purchase-description">Quantity: 1</span>
+                        </section>
+
+                        <section class="purchase-cost">$48</section>
+                    </div>
+
+                </section>
+
+                <section class="summary-block">
+
+                    <table class="payment-items">
+                        <tr>
+                            <th class="payment-column-1">Subtotal</th>
+                            <th class="payment-column-2">$398</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Shipping</th>
+                            <th class="payment-column-2">Free</th>
+                        </tr>
+                        <tr>
+                            <th class="payment-column-1">Taxes</th>
+                            <th class="payment-column-2">$12.12</th>
+                        </tr>
+                    </table>
+
+                    <div class="total-summary-container">
+                        <span class="total-summary-title">Total</span>
+                        <span class="total-summary">$410.12</span>
+                    </div>
+
+                </section>
+
+                <span class="terms disabled">All purchases are subject to our
+                    <a href="#" class="terms-link">Terms and Conditions</a>
+                </span>
+
+            </section>
+        </section>
+    </div>
+    <script src="../javascripts/views/cart.js"></script>
+</body>
+
+</html>
