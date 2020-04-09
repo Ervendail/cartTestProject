@@ -32,7 +32,11 @@ header {
     position: fixed;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 40px;
+    z-index: 100;
+}
+
+header + * {
+    margin-top: 50px;
 }
 
 .cart {
