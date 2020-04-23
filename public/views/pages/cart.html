@@ -33,12 +33,13 @@
                     <div class="form-recipient">
                         <h3 class="form-title">Recipient</h3>
 
-                        <div class="tooltip" id="name-tooltip">Please enter recipient full name</div>
-                        <input type="text" name="name" id="name" placeholder="Full Name" required>
+                        <div class="input-container">
+                            <input type="text" name="user name" id="user-name" placeholder="Full Name" data-label="Please enter your name" required>
+                        </div>
 
-                        <div class="tooltip phone-tooltip" id="phone-tooltip">Please enter phone number</div>
-                        <input type="tel" name="phone number" id="phoneNumber" placeholder="Daytime Phone" required
-                            class="little-size-input">
+                        <div class="input-container halfsize-input-container">
+                            <input type="tel" name="phone number" id="phone-number" placeholder="Daytime Phone" data-label="Please enter your phone number" maxlength="12" pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}"  required>
+                        </div>
 
                         <span class="phone-note">For delivery questions only</span>
                     </div>
@@ -46,36 +47,41 @@
                     <div class="form-address">
                         <h3 class="form-title">Address</h3>
 
-                        <div class="tooltip street-tooltip" id="address-tooltip">Please enter street address</div>
-                        <input type="text" name="address" id="address" placeholder="Street Address" required>
+                        <div class="input-container">
+                            <input type="text" name="street address" id="street-address" placeholder="Street Address" data-label="Please enter your street" required>
+                        </div>
 
-                        <input type="text" name="building" id="building"
-                            placeholder="Apt, Suite, Bldg, Gate code, (Optional)">
+                        <div class="input-container">
+                            <input type="text" name="building" id="building"
+                                placeholder="Apt, Suite, Bldg, Gate code, (Optional)">
+                        </div>
 
-                        <div class="tooltip city-tooltip" id="city-tooltip">Please enter your city</div>
-                        <input type="text" name="city" id="city" placeholder="City" required>
+                        <div class="input-container">
+                            <input type="text" name="user city" id="user-city" placeholder="City" data-label="Please enter your city" required>
+                        </div>
 
-                        <div class="tooltip country-tooltip" id="country-tooltip">Please choose your country</div>
-                        <input type="text" name="country" id="country" list="countries" placeholder="Country" required
-                            class="little-size-input">
-                        <datalist id="countries">
-                            <option value="Romania">Romania</option>
-                            <option value="Russia">Russia</option>
-                            <option value="Rwanda">Rwanda</option>
-                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                            <option value="Saint Lucia">Saint Lucia</option>
-                            <option value="Saint Vincent & Grenadines">Saint Vincent & Grenadines</option>
-                            <option value="Samoa">Samoa</option>
-                            <option value="San Marino">San Marino</option>
-                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                            <option value="Senegal">Senegal</option>
-                        </datalist>
+                        <div class="input-container halfsize-input-container">
+                            <input type="text" name="user's country" id="user-country" list="countries" placeholder="Country"
+                                data-label="Please enter your country" required>
+                            <datalist id="countries">
+                                <option value="Romania">Romania</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                <option value="Saint Lucia">Saint Lucia</option>
+                                <option value="Saint Vincent & Grenadines">Saint Vincent & Grenadines</option>
+                                <option value="Samoa">Samoa</option>
+                                <option value="San Marino">San Marino</option>
+                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Senegal">Senegal</option>
+                            </datalist>
+                        </div>
 
-                        <div class="tooltip zip-tooltip" id="zip-tooltip">Please enter zip code</div>
-                        <input type="text" name="zipCode" id="zipCode" placeholder="ZIP" required maxlength="7"
-                            minlength="4" class="zip">
-
+                        <div class="input-container zip-input-container">
+                            <input type="text" name="user's zipcode" id="user-zipcode" placeholder="ZIP" data-label="Please enter your zip-code" required maxlength="5"
+                                minlength="5" pattern="[0-9]{5}">
+                        </div>
                         <button type="submit" class="submit-button" id="submit-shipping-button">Continue</button>
                     </div>
 
@@ -124,7 +130,7 @@
                     <div class="ordered-item">
 
                         <div class="image-container">
-                            <img src="../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
+                            <img src="../../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
                         </div>
 
                         <section class="about-purchase">
@@ -171,7 +177,7 @@
     </div>
 
     <div class="background-field billing-page" id="billing-page">
-        <section class="main-block" id="billing-page">
+        <section class="main-block">
 
 
             <section class="left-block">
@@ -195,41 +201,48 @@
                     <div class="form-recipient">
                         <h3 class="form-title">Billing contact</h3>
 
-                        <input type="text" name="fullNname" id="full-name" class="full-namer" placeholder="Full Name"
-                            data-tooltip="please enter your full name" required>
-
-                        <input type="text" name="email" id="email" placeholder="Email Address" required>
+                        <div class="input-container">
+                            <input type="text" name="full-name" id="full-name"
+                                placeholder="Full Name" data-label="Please enter your full name" required>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="user's email" id="user-email" placeholder="Email Address" data-label="Please enter correct e-mail" required>
+                        </div>
                     </div>
 
                     <div class="form-address">
                         <h3 class="form-title">Billing Address</h3>
-
-                        <input type="text" name="address" id="address" placeholder="Street Address" required>
-
-                        <input type="text" name="building" id="building"
-                            placeholder="Apt, Suite, Bldg, Gate code, (Optional)">
-
-                        <input type="text" name="city" id="city" placeholder="City" required>
-
-                        <input type="text" name="country" id="country" list="countries" placeholder="Country" required
-                            class="little-size-input">
-                        <datalist id="countries">
-                            <option value="Romania">Romania</option>
-                            <option value="Russia">Russia</option>
-                            <option value="Rwanda">Rwanda</option>
-                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                            <option value="Saint Lucia">Saint Lucia</option>
-                            <option value="Saint Vincent & Grenadines">Saint Vincent & Grenadines</option>
-                            <option value="Samoa">Samoa</option>
-                            <option value="San Marino">San Marino</option>
-                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                            <option value="Senegal">Senegal</option>
-                        </datalist>
-
-                        <input type="text" name="zipCode" id="zipCode" placeholder="ZIP" required maxlength="7"
-                            minlength="4" class="zip">
-
+                        <div class="input-container">
+                            <input type="text" name="street address" id="billing-street-address" placeholder="Street Address" data-label="Please enter your street" required>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="building" id="building"
+                                placeholder="Apt, Suite, Bldg, Gate code, (Optional)">
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="city" id="billing-user-city" placeholder="City" data-label="Please enter your city" required>
+                        </div>
+                        <div class="input-container halfsize-input-container">
+                            <input type="text" name="country" id="billing-country" list="countries" placeholder="Country"
+              data-label="Please enter your country" required>
+                            <datalist id="countries">
+                                <option value="Romania">Romania</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                <option value="Saint Lucia">Saint Lucia</option>
+                                <option value="Saint Vincent & Grenadines">Saint Vincent & Grenadines</option>
+                                <option value="Samoa">Samoa</option>
+                                <option value="San Marino">San Marino</option>
+                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Senegal">Senegal</option>
+                            </datalist>
+                        </div>
+                        <div class="input-container zip-input-container">
+                            <input type="text" name="user's zipcode" id="zipcode" placeholder="ZIP" data-label="Please enter your zip-code" required maxlength="5"
+                                minlength="5" pattern="[0-9]{5}">
+                        </div>
                         <button type='submit' class="submit-button" id="submit-billing-button">Continue</button>
                     </div>
                 </form>
@@ -277,7 +290,7 @@
                     <div class="ordered-item">
 
                         <div class="image-container">
-                            <img src="../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
+                            <img src="../../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
                         </div>
 
                         <section class="about-purchase">
@@ -345,7 +358,7 @@
                 <h1>Payment</h1>
 
                 <div class="encrypted-payment">
-                    <div class="encrypted-payment-img"><img src="../../images/payLock.png" alt="lock"></div>
+                    <div class="encrypted-payment-img"><img src="../images/payLock.png" alt="lock"></div>
                     <span class="encrypted-payment-title">This is a secure 128-bit SSL encrypted payment</span>
                 </div>
 
@@ -353,26 +366,30 @@
 
                     <div class="cardholder-info">
                         <h3 class="payment-form-title">Cardholder name</h3>
-
-                        <input type="text" name="cardholderName" id="cardholderName"
-                            placeholder="Name as it appears on your card" required>
-
+                        <div class="input-container">
+                        <input type="text" name="cardholder name" id="cardholder-name"
+                            placeholder="Name as it appears on your card" data-label="Please enter cardholder name" required>
+                        </div>
                         <h3 class="payment-form-title">Card number</h3>
-
-                        <input type="text" name="cardNumber" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
-
+                        <div class="input-container">
+                        <input type="text" name="card number" id="card-number" placeholder="XXXX XXXX XXXX XXXX" data-label="Please enter correct card number" maxlength="16" required>
+                        </div>
                     </div>
 
                     <div class="date-and-code">
 
                         <div class="expire-date-container">
                             <h3 class="payment-form-title">Expire Date</h3>
-                            <input type="text" name="expireDate" id="expireDate" placeholder="MM/YY" required>
+                            <div class="input-container">
+                            <input type="text" name="expire card date" id="expire-card-date" placeholder="MM/YY" data-label="Please enter expire card date"  maxlength="4" minlength="4" required>
+                            </div>
                         </div>
 
                         <div class="security-code-container">
                             <h3 class="payment-form-title">Security Code</h3>
-                            <input type="text" name="securityCode" id="securityCode" required>
+                            <div class="input-container">
+                            <input type="text" name="security code" id="security-code" data-label="Please enter security code" required>
+                            </div>
                         </div>
 
                     </div>
@@ -427,7 +444,7 @@
                     <div class="ordered-item">
 
                         <div class="image-container">
-                            <img src="../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
+                            <img src="../../images/bitmap-bag.png" alt="The zip tote" class="purchase-image">
                         </div>
 
                         <section class="about-purchase">
@@ -504,7 +521,7 @@
                     <div class="ordered-item">
 
                         <div class="image-container">
-                            <img src="../../images/Bitmap-boots.png" alt="The chelsea boots" class="purchase-image">
+                            <img src="../images/Bitmap-boots.png" alt="The chelsea boots" class="purchase-image">
                         </div>
 
                         <section class="about-purchase">
@@ -519,7 +536,7 @@
                     <div class="ordered-item">
 
                         <div class="image-container">
-                            <img src="../../images/Bitmap-backpack.png" alt="The backpack" class="purchase-image">
+                            <img src="../images/Bitmap-backpack.png" alt="The backpack" class="purchase-image">
                         </div>
 
                         <section class="about-purchase">

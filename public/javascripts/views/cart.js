@@ -1,119 +1,118 @@
-// tooltip variables
-const writtingText = document.getElementById('name');
-const nameTooltip = document.getElementById('name-tooltip');
+const shippingInputs = [
+	document.getElementById('user-name'),
+	document.getElementById('phone-number'),
+	document.getElementById('street-address'),
+	document.getElementById('user-city'),
+	document.getElementById('user-country'),
+	document.getElementById('user-zipcode'),]
 
-const userPhone = document.getElementById('phoneNumber');
-const phoneTooltip = document.getElementById('phone-tooltip');
+const billingInputs = [
+	document.getElementById('full-name'),
+	document.getElementById('user-email'),
+	document.getElementById('billing-street-address'),
+	document.getElementById('billing-user-city'),
+	document.getElementById('billing-country'),
+	document.getElementById('zipcode'),]
 
-const userStreet = document.getElementById('address');
-const streetTooltip = document.getElementById('address-tooltip');
+const paymentInputs = [
+	document.getElementById('cardholder-name'),
+	document.getElementById('card-number'),
+	document.getElementById('expire-card-date'),
+	document.getElementById('security-code'),];
 
-const userCity = document.getElementById('city');
-const cityTooltip = document.getElementById('city-tooltip');
+const pages = [document.getElementById('shipping-page'),
+document.getElementById('billing-page'),
+document.getElementById('payment-page'),
+document.getElementById('success-page'),];
 
-const userZipcode = document.getElementById('zipCode');
-const zipTooltip = document.getElementById('zip-tooltip');
-
-const userCountry = document.getElementById('country');
-const countryTooltip = document.getElementById('country-tooltip');
-
-
-const showTooltip = (input, tooltip) => {
-	tooltip.style.display = (input.value === '' && tooltip.style.display === 'none') ?
-	'inline-block' : 'none';	
-}
-
-
-const showNameTooltip = () => { 
-showTooltip(writtingText, nameTooltip)
-}
-
-writtingText.addEventListener('input', showNameTooltip); 
-
- const showPhoneTooltip = () => {
-	 showTooltip(userPhone, phoneTooltip)
- }
-
- userPhone.addEventListener('input', showPhoneTooltip);
-
-
- const showStreetTooltip = () => {
-	showTooltip(userStreet, streetTooltip);	
-}
-
-userStreet.addEventListener('input', showStreetTooltip);
-
-
-
-const showCityTooltip = () => {
-	showTooltip(userCity, cityTooltip);
-}
-
-userCity.addEventListener('input', showCityTooltip);
-
-
-const showZipTooltip = () => {
-	showTooltip(userZipcode, zipTooltip);
-}
-
-userZipcode.addEventListener('input', showZipTooltip);
-
-const showCountryTooltip = () => {
-	showTooltip(userCountry, countryTooltip);
-}
-
-userCountry.addEventListener('focus', showCountryTooltip);
-
-
-const shippingSubmitButton = document.getElementById('submit-shipping-button'); 
+const shippingSubmitButton = document.getElementById('submit-shipping-button');
 const billingSubmitButton = document.getElementById('submit-billing-button');
 const paymentSubmitButton = document.getElementById('pay-button');
 
-const shippingPage = document.getElementById('shipping-page');
-const billingPage = document.getElementById('billing-page');
-const paymentPage = document.getElementById('payment-page');
-const successPage = document.getElementById('success-page');
-
-const pages = [shippingPage, billingPage, paymentPage, successPage];
-
-const switchPages = (pageNumber) => {
-    pages.forEach(element => element.style.display = 'none'); 
-	pages[pageNumber].style.display = 'flex';
-	console.log('hi');
+const switchTooltip = (input, tooltip) => (event) => {
+	const newTooltipDisplay = input.value.trim() === '' ? 'inline-block' : 'none';
+	if (tooltip.style.display !== newTooltipDisplay) {
+		tooltip.style.display = newTooltipDisplay;
+	}
 }
 
-const handleShippingSubmit = () => switchPages(1);
+const createTooltips = (form) => {
+	form.forEach(input => {
+		const tooltip = document.createElement('div');
 
-shippingSubmitButton.addEventListener('click', handleShippingSubmit);
+		tooltip.className = "tooltip";
+		tooltip.textContent = input.getAttribute('data-label');
 
-const handleBillingSubmit = () => switchPages(2);
+		input.insertAdjacentElement('beforebegin', tooltip);
+		input.addEventListener('input', switchTooltip(input, tooltip));
+		input.addEventListener('blur', switchTooltip(input, tooltip));
+	})
+}
 
-billingSubmitButton.addEventListener('click', handleBillingSubmit);
+createTooltips(shippingInputs);
+createTooltips(billingInputs);
+createTooltips(paymentInputs);
 
-const handlePaymentSubmit = () => switchPages(3);
+const makePhoneMask = (event) => {
+	const input = event.target;
+	let originalValue = input.value;
+	let digitsOnly = originalValue.replace(/\D/g, "");
+	let digits = digitsOnly.split("");
 
-paymentSubmitButton.addEventListener('click',  handlePaymentSubmit);
+	if (digits.length > 3) {
+		digits.splice(3, 0, "-");
+	}
 
-const userEmail = document.getElementById('email');
+	if (digits.length > 7) {
+		digits.splice(7, 0, "-");
+	}
+
+	input.value = digits.join("");
+}
+
+shippingInputs[1].addEventListener('input', makePhoneMask);
+
+const switchPages = (pageNumber) => {
+	pages.forEach(element => element.style.display = 'none');
+	pages[pageNumber].style.display = 'flex';
+}
+
+const handleSubmit = (inputArray, pageNumber) => (event) => {
+	event.preventDefault();
+	inputArray.forEach(input => {
+		if (!input.validity.valid) {
+			input.focus();
+			input.blur();
+		}
+	});
+	let checkingValidity = inputArray.every(input => input.validity.valid);
+	if (checkingValidity) {
+		switchPages(pageNumber);
+	}
+
+}
+
+shippingSubmitButton.addEventListener('click', handleSubmit(shippingInputs, 1));
+
+billingSubmitButton.addEventListener('click', handleSubmit(billingInputs, 2));
+
+paymentSubmitButton.addEventListener('click', handleSubmit(paymentInputs, 3));
 
 const confirmedEmail = document.getElementById('contact-email');
 
-const takeInput = (emailInput) => {
-	const email = emailInput.target.value;
-
+const handleUserEmail = (event) => {
+	const email = event.target.value;
 	confirmedEmail.textContent = email;
 	confirmedEmail.href = `mailto:${email}`;
 }
 
-userEmail.oninput = takeInput;
-
-
-
-// validation
+billingInputs[1].addEventListener('input', handleUserEmail);
 
 
 
 
 
 
-	
+
+
+

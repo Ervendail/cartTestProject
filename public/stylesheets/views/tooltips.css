@@ -7,7 +7,8 @@
   border-radius: 5px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 7px;
+  bottom: 43px;
+  left: -10px;
   z-index: 1;
   font-size: 13px;
   line-height: 15px;
@@ -26,21 +27,4 @@
   border-width: 10px 8px 0 8px;
   border-style: solid;
   border-color: #FFFFFF transparent transparent transparent;
-}
-   
-.phone-tooltip {
-  top: 67px;
-}
-  
-.city-tooltip {
-  top: 131px;
-}
-  
-.zip-tooltip {
-  top: 181px;
-  left: 205px;
-}
-
-.country-tooltip {
-  top: 181px;
 }
