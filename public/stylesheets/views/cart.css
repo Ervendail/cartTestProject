@@ -23,11 +23,24 @@
   font-size: 12px;
 }
 
+.input-container {
+  position: relative;
+  width: 100%;
+  margin: 0px 0px 20px;
+}
+
+.halfsize-input-container {
+  width: 55%;
+}
+
+.zip-input-container {
+  width: 35%;
+}
+
 input {
   border: 1px solid #dedcdc;
   border-radius: 5px;
   width: 100%;
-  margin: 0px 0px 20px;
   font-size: 16px;
   line-height: 20px;
   padding: 10px;
@@ -84,7 +97,6 @@ input:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 30px;
   position: relative;
 }
 
@@ -99,14 +111,6 @@ input:hover {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-}
-
-.little-size-input {
-  width: 55%;
-}
-
-.zip {
-  width: 35%;
 }
 
 .encrypted-payment {

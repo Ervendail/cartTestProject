@@ -2,11 +2,25 @@
 <head>
     <title>Local Development</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
-<header></header>
+<header>
+        <img src="images/intro.png" alt="logo" class="logo">
+    <div class="whole-cart">
+        <button onclick="navigateToCart()" class="cart-button">
+            <span class="cart-name">cart</span>
+            <span class="cart-icon-wrapper">
+                <i class="material-icons">shopping_cart</i>
+                <span class="round-counter">3</span>
+            </span>
+        </button>
+        </div>
+    </div>
+</header>
 <p>Welcome to your task</p>
 <script src="javascripts/main.js"></script>
 </body>
